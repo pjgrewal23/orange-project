@@ -45,7 +45,7 @@ scene.add(pointLight, ambientLight);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const material = new THREE.MeshStandardMaterial({ color: 0xFFA500 });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
@@ -65,7 +65,7 @@ scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('jeff.png');
+const jeffTexture = new THREE.TextureLoader().load('oj.png');
 
 const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
 
@@ -73,7 +73,7 @@ scene.add(jeff);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('moon.jpeg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
 const moon = new THREE.Mesh(
@@ -92,6 +92,26 @@ moon.position.setX(-10);
 jeff.position.z = -5;
 jeff.position.x = 2;
 
+// Moon 2
+
+//const moonTexture = new THREE.TextureLoader().load('moon.jpeg');
+//const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+
+const moon2 = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: moonTexture,
+    normalMap: normalTexture,
+  })
+);
+
+scene.add(moon2);
+
+moon2.position.z = 40;
+moon2.position.setX(-10);
+
+//jeff.position.z = -5;
+//jeff.position.x = 2;
 // Scroll Animation
 
 function moveCamera() {
@@ -99,6 +119,10 @@ function moveCamera() {
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
+
+  moon2.rotation.x += 0.05;
+  moon2.rotation.y += 0.075;
+  moon2.rotation.z += 0.05;
 
   jeff.rotation.y += 0.01;
   jeff.rotation.z += 0.01;
