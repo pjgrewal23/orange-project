@@ -39,7 +39,7 @@
 
       <div>
         <iframe src="https://olafwempe.com/mp3/silence/silence.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-<audio controls autoplay>
+<audio id="my_sound" controls autoplay>
 <source src="upbeat.mp3" type="audio/mp3">
 </audio>
       </div>
@@ -47,7 +47,12 @@
     
     <script defer type="module" src="https://pjgrewal23.github.io/orange-project/index.js"></script>
 
-
+<script>
+    function play(){
+        var sound = document.getElementById("my_sound");
+        sound.play();
+    }
+</script>
 
 
     
