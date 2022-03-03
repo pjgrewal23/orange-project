@@ -73,6 +73,6 @@ canvas {
   }
 
   .left {
-    grid-column: 8 / 12;
+    grid-column: 6 / 12;
     justify-content: right;  
   }
